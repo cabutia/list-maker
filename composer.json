@@ -11,9 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "illuminate/database": "^5.8@dev",
-        "illuminate/support": "^5.8@dev",
-        "illuminate/console": "^5.8@dev"
     },
     "autoload": {
         "psr-4": {
