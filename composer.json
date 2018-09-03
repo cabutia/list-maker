@@ -1,0 +1,14 @@
+{
+    "name": "leandro-grg/list-maker",
+    "description": "A template & db based list generator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriel Gomez",
+            "email": "gleandro@ceres.solutions"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
