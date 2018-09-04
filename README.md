@@ -98,13 +98,16 @@ Basically, it works like the list parser, with a little difference:
     pattern `parse{Type}Type`. For example, this will be the method for a divider
     type item:
 ```php
-<?php
 
 static function parseDividerType ($item)
 {
     return [];
 }
 ```
+
+* **Template**
+    And you can find the template for each type of item, in the *list* folder,
+    following the next name pattern `{ItemType}Template.html`.
 
 # Adding custom item types
 We're working on this. At the moment, you can use the `item` and `divider` item types.
