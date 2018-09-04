@@ -82,21 +82,21 @@ For each list, a directory is created in `app/Helpers/ListTemplates/{StudlyCaseL
 Inside the `app/Helpers/ListTemplates/{StudlyCaseListName}` directory, you will
 find two relevant files for the lists:
 * **Parser**
-⋅⋅⋅It's a generated class called `{StudlyCaseListName}Parser.php` with only one method,
-⋅⋅⋅the `parse` method. It receives the `$list (Illuminate\Database\Eloquent\Model)`
-⋅⋅⋅parameter, useful for replacing the strings in the template.
-⋅⋅⋅The `parse` method returns an array to be used in the `strtr` php function.
+    It's a generated class called `{StudlyCaseListName}Parser.php` with only one method,
+    the `parse` method. It receives the `$list (Illuminate\Database\Eloquent\Model)`
+    parameter, useful for replacing the strings in the template.
+    The `parse` method returns an array to be used in the `strtr` php function.
 
 * **Template**
-⋅⋅⋅Inside the folder, you can find a file called `ListTemplate.html`. That's the
-⋅⋅⋅list template, you can modify it as you like.
+    Inside the folder, you can find a file called `ListTemplate.html`. That's the
+    list template, you can modify it as you like.
 
 ### List items
 Basically, it works like the list parser, with a little difference:
 * **Parser**
-⋅⋅⋅In this case, the parser will have a method for each type of item, following the
-⋅⋅⋅pattern `parse{Type}Type`. For example, this will be the method for a divider
-⋅⋅⋅type item:
+    In this case, the parser will have a method for each type of item, following the
+    pattern `parse{Type}Type`. For example, this will be the method for a divider
+    type item:
 ```php
 <?php
 
