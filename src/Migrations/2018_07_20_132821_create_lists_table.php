@@ -13,15 +13,15 @@ class CreateListsTable extends Migration
      */
     public function up()
     {
-        $config = config('listmaker.tables');
-
-        Schema::create($config['lists-table'], function (Blueprint $table) {
+        // The lists table
+        Schema::create('lists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();
         });
 
-        Schema::create($config['list-items-table'], function (Blueprint $table) {
+        // The items table
+        Schema::create('list_items', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('list_id');
             $table->enum('type', ['item', 'divider']);
@@ -32,7 +32,7 @@ class CreateListsTable extends Migration
             $table->timestamps();
 
             $table->foreign('list_id')->references('id')->on('lists')->onUpdate('cascade')->onDelete('cascade');
-        }
+        });
     }
 
     /**
@@ -42,8 +42,7 @@ class CreateListsTable extends Migration
      */
     public function down()
     {
-        $config = config('listmaker.tables');
-        Schema::dropIfExists($config['lists-table']);
-        Schema::dropIfExists($config['list-items-table']);
+        Schema::dropIfExists('list_items');
+        Schema::dropIfExists('lists');
     }
 }

@@ -13,18 +13,6 @@ class ListMakerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->publishes([
-        //     __DIR__ . '/../Migrations/' => database_path('migrations')
-        // ], 'migrations');
-        //
-        $this->publishes([
-            __DIR__ . '/../config.php' => config_path('listmaker.php')
-        ], 'config');
-        //
-        // $this->publishes([
-        //     __DIR__ . '/../Models/' => app_path()
-        // ], 'models');
-
         $this->publishes([
             __DIR__ . '/../Templates' => 'app/Helpers/ListTemplates'
         ]);

@@ -2,7 +2,7 @@
 
 namespace LeandroGRG\ListMaker;
 
-use Illuminate\Database\Eloquent\Model;
+use \LeandroGRG\ListMaker\Models\BaseListModel;
 
 class ListGen {
 
@@ -16,7 +16,7 @@ class ListGen {
 
     public function __construct ($list)
     {
-        $this->list = \LeandroGRG\ListMaker\Models\BaseListModel::where('name', $list)->first();
+        $this->list = BaseListModel::where('name', $list)->firstOr(null);
     }
 
 
