@@ -74,7 +74,7 @@ class CreateList extends Command
             $path = 'app/Helpers/ListTemplates';
             $studlyName = studly_case($list->name);
             if (! file_exists("{$path}/{$studlyName}")) {
-                mkdir("{$path}/{$studlyName}");
+                mkdir("{$path}/{$studlyName}", 0755, true);
             }
 
             $templates = [
