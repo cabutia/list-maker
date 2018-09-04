@@ -24,6 +24,10 @@ class ListMakerServiceProvider extends ServiceProvider
             \LeandroGRG\ListMaker\Commands\DeleteList::class,
             \LeandroGRG\ListMaker\Commands\DeleteListItem::class
         ]);
+
+        \Blade::directive('list', function ($expression) {
+            return "<?php e(LeandroGRG\ListMaker\ListGen::make({$expression})) ?>";
+        });
     }
 
     /**
